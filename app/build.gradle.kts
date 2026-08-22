@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.template.compose_hilt_starter" // Kendi package ismine göre düzenle
+    namespace = "com.template.compose_hilt_starter"
     compileSdk = 35
 
     defaultConfig {
