@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Template_hilt_starter"
+rootProject.name = "compose_hilt_starter"
 include(":app")
  
