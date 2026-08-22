@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.template" // Kendi package ismine göre düzenle
+    namespace = "com.template.compose_hilt_starter" // Kendi package ismine göre düzenle
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.template"
+        applicationId = "com.template.compose_hilt_starter"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
