@@ -11,21 +11,21 @@ Rename the **base package** and the **application package**.
 Current template package:
 
 ```text
-com.template.compose_hilt_starter
+com.template.composehiltstarter
 ```
 
 Rename it to your new package structure, for example:
 
 ```text
-com.myPackage.myNewApp
+com.mycompany.mynewapp
 ```
 
 Make sure both:
 
-* `template` → `myPackage`
-* `compose_hilt_starter` → `myNewApp`
+* `template` → `mycompany`
+* `composehiltstarter` → `mynewapp`
 
-are renamed using **Refactor → Rename → Rename Package**.
+are renamed using **Refactor → Rename → Rename Package**. Keep package names lowercase, without underscores.
 
 ---
 
@@ -41,10 +41,10 @@ Update both `namespace` and `applicationId`:
 
 ```kotlin
 android {
-    namespace = "com.myPackage.myNewApp"
+    namespace = "com.mycompany.mynewapp"
 
     defaultConfig {
-        applicationId = "com.myPackage.myNewApp"
+        applicationId = "com.mycompany.mynewapp"
 
         // ...
     }
@@ -53,46 +53,7 @@ android {
 
 ---
 
-## 3. Rename the Application Class
-
-Rename the template `Application` class.
-
-For example:
-
-```text
-ComposeHiltStarterApplication
-```
-
-→
-
-```text
-MyApplication
-```
-
-Make sure the class still contains `@HiltAndroidApp`.
-
-Then open:
-
-```text
-app/src/main/AndroidManifest.xml
-```
-
-Verify that `android:name` points to the renamed `Application` class:
-
-```xml
-<application
-    android:name=".MyApplication"
-    android:label="@string/app_name"
-    android:theme="@style/Theme.TemplateHiltStarter">
-
-    <!-- ... -->
-
-</application>
-```
-
----
-
-## 4. Update Gradle Project Name
+## 3. Update Gradle Project Name
 
 Open:
 
@@ -103,18 +64,18 @@ settings.gradle.kts
 Find:
 
 ```kotlin
-rootProject.name = "compose_hilt_starter"
+rootProject.name = "ComposeHiltStarter"
 ```
 
 Change it to your new project name:
 
 ```kotlin
-rootProject.name = "myNewApp"
+rootProject.name = "MyNewApp"
 ```
 
 ---
 
-## 5. Update Application Name
+## 4. Update Application Name
 
 Open:
 
@@ -134,7 +95,7 @@ Replace `My New App` with the actual application name.
 
 ---
 
-## 6. Verify and Clean the Project
+## 5. Verify and Clean the Project
 
 Before starting development:
 
@@ -142,11 +103,11 @@ Before starting development:
 * [ ] Verify the application package was renamed.
 * [ ] Verify `namespace` was updated.
 * [ ] Verify `applicationId` was updated.
-* [ ] Verify the `Application` class was renamed.
-* [ ] Verify `AndroidManifest.xml` references the renamed `Application` class.
 * [ ] Verify `rootProject.name` in `settings.gradle.kts`.
 * [ ] Verify `app_name` in `strings.xml`.
-* [ ] Search the project for old template names and rename any remaining references.
+* [ ] Search the project for `composehiltstarter` and `ComposeHiltStarter` and rename any remaining references.
+
+The `App` class, `AppTheme` and `Theme.App` are intentionally generic and do not need to be renamed.
 
 Then run:
 
@@ -166,7 +127,7 @@ Finally, run the application and make sure everything builds and launches succes
 
 ---
 
-## 7. Remove Setup File
+## 6. Remove Setup File
 
 After completing the setup successfully, delete:
 

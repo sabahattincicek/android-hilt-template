@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "compose_hilt_starter"
+rootProject.name = "ComposeHiltStarter"
 include(":app")
  
