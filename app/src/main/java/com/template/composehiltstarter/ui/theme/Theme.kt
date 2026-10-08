@@ -10,6 +10,9 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+/*
+ * App theme: the light and dark color schemes and the AppTheme composable that applies them.
+ */
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
@@ -32,6 +35,10 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+/**
+ * Applies the app theme to [content]. Uses wallpaper-based dynamic colors on Android 12+ when
+ * [dynamicColor] is true, otherwise the app's own light or dark color scheme.
+ */
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

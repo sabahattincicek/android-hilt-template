@@ -27,6 +27,7 @@ sealed class UiText {
         vararg val args: Any
     ) : UiText()
 
+    /** Resolves this text to a plain string using [context], for use outside of Compose. */
     fun asString(context: Context): String {
         return when (this) {
             is DynamicString -> value
@@ -34,6 +35,7 @@ sealed class UiText {
         }
     }
 
+    /** Resolves this text to a plain string inside a composable. */
     @Composable
     fun asString(): String {
         return when (this) {

@@ -13,11 +13,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.template.composehiltstarter.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
+/**
+ * The single activity of the app. Hosts the Compose UI and is the Hilt entry point for everything
+ * shown on screen.
+ */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    /** Enables edge-to-edge drawing and sets the Compose content of the app. */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.d("onCreate: savedInstanceState=%s", if (savedInstanceState == null) "null" else "restored")
         enableEdgeToEdge()
         setContent {
             AppTheme {
@@ -32,6 +39,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/** Placeholder content showing a greeting for [name]. Replace it with the real start screen. */
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -40,6 +48,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
+/** Android Studio preview of [Greeting]. */
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
