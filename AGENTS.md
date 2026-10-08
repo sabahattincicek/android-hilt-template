@@ -108,8 +108,10 @@ class ProfileViewModel @Inject constructor(
 
 ## 4. Logging
 
-- Every class logs, using **Timber**: `Timber.d("Profile loaded: id=%s", profile.id)`. Do not call
-  `android.util.Log` directly. Timber tags each line with the calling class automatically, and it
+- Every class that has behavior logs, using **Timber**:
+  `Timber.d("Profile loaded: id=%s", profile.id)`. Classes with nothing to log are exempt: plain
+  data holders (models, DTOs, entities, UI state, wrappers such as `Resource` and `UiText`),
+  constants, theme definitions, and empty placeholders. Do not call `android.util.Log` directly. Timber tags each line with the calling class automatically, and it
   is silent in unit tests and in release builds (the debug tree is planted in `App` for debug
   builds only).
 - Place logs wherever they help debugging: function entry for significant operations, state
