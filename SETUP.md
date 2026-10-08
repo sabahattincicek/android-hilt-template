@@ -127,7 +127,34 @@ Finally, run the application and make sure everything builds and launches succes
 
 ---
 
-## 6. Remove Setup File
+## 6. Review the AI Assistant Files
+
+The template ships with three files that guide AI coding assistants. Open them and adjust them to
+your project:
+
+| File | Purpose |
+|---|---|
+| `AGENTS.md` | Rules the AI follows: scope, comments, logging, unit tests, architecture, and git workflow. |
+| `DEVLOG.md` | Timestamped log of what has been done, newest entry first, so the AI does not have to re-read the whole codebase every session. |
+| `ROADMAP.md` | Planned work, split into phases and checkbox tasks (`[ ]` open, `[x]` done). |
+
+Things to do:
+
+* [ ] Read `AGENTS.md` and change, add, or remove rules as you see fit.
+* [ ] Replace the placeholder phases in `ROADMAP.md` with your own plan.
+* [ ] Leave the first `DEVLOG.md` entry as it is: it describes what the template gave you, and its mention of `ComposeHiltStarter` is intentional.
+
+In your first session, tell the AI to read `AGENTS.md`. It will then ask you two things and record
+your answers in the file:
+
+* **Which AI tool you are using.** It renames `AGENTS.md` to the file name your tool loads
+  automatically (for example `CLAUDE.md` for Claude Code), so later sessions pick the rules up on
+  their own.
+* **Who makes git commits and pushes:** the AI or you.
+
+---
+
+## 7. Remove Setup File
 
 After completing the setup successfully, delete:
 
